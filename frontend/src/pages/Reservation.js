@@ -13,7 +13,7 @@ const ReservationForm = () => {
 
   const onFinish = async (values) => {
     try {
-      const res = await axios.post("http://localhost:5000/post", {
+      const res = await axios.post(`http://${process.env.REACT_APP_API_BASE_URL}:5000/post`, {
         ...values,
         fromdate: values.fromdate.format(),
       });

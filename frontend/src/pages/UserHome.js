@@ -10,7 +10,7 @@ const UserHome = () => {
   }, []);
 
   const retrievePosts = () => {
-    axios.get("http://localhost:5000/posts").then((res) => {
+    axios.get(`http://${process.env.REACT_APP_API_BASE_URL}:5000/posts`).then((res) => {
       if (res.data.success) {
         setPosts(res.data.existingPosts);
       }

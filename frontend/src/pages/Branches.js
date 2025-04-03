@@ -20,7 +20,7 @@
 
 //   useEffect(() => {
 //     axios
-//       .get('http://localhost:8070/Parking/parking')
+//       .get('http://${process.env.REACT_APP_API_BASE_URL}:8070/Parking/parking')
 //       .then((response) => {
 //         setPlaces(response.data);
 //       })

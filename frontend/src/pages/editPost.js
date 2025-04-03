@@ -22,7 +22,7 @@ function EditPost() {
 
   // Check if 'id' is available before making the API call
   useEffect(() => {
-    axios.get(`http://localhost:5000/post/${id}`).then((res) => {
+    axios.get(`http://${process.env.REACT_APP_API_BASE_URL}:5000/post/${id}`).then((res) => {
       if (res.data.success) {
         const postDetails = res.data.post;
 
@@ -100,7 +100,7 @@ function EditPost() {
       comments: comments
     };
 
-    axios.put(`http://localhost:5000/posts/${id}`, data).then((res) => {
+    axios.put(`http://${process.env.REACT_APP_API_BASE_URL}:5000/posts/${id}`, data).then((res) => {
       if (res.data.success) {
 
         alert("Post Updated Successfully");

@@ -17,7 +17,7 @@ export default class Create extends Component {
   
 
   retrievePosts() {
-    axios.get("http://localhost:5000/posts").then((res) => {
+    axios.get(`http://${process.env.REACT_APP_API_BASE_URL}:5000/posts`).then((res) => {
       if (res.data.success) {
         this.setState({
           posts: res.data.existingPosts,
@@ -27,7 +27,7 @@ export default class Create extends Component {
   }
 
   onDelete = (id) => {
-    axios.delete(`http://localhost:5000/post/${id}`).then((res) => {
+    axios.delete(`http://${process.env.REACT_APP_API_BASE_URL}:5000/post/${id}`).then((res) => {
       alert('Delete Successfully');
       this.retrievePosts();
     });

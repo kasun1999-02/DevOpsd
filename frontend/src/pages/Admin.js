@@ -11,7 +11,7 @@ const Admin = () => {
   }, []);
 
   const retrievePosts = () => {
-    axios.get("http://localhost:5000/posts").then((res) => {
+    axios.get(`http://${process.env.REACT_APP_API_BASE_URL}:5000/posts`).then((res) => {
       if (res.data.success) {
         setPosts(res.data.existingPosts);
       }
@@ -20,7 +20,7 @@ const Admin = () => {
 
   const onDelete = (id) => {
     console.log(id);
-    axios.delete(`http://localhost:5000/post/${id}`).then((res) => {
+    axios.delete(`http://${process.env.REACT_APP_API_BASE_URL}:5000/post/${id}`).then((res) => {
       message.success('Deleted Successfully');
       retrievePosts();
     });
