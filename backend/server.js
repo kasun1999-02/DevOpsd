@@ -11,8 +11,14 @@ const mongoose = require('mongoose');// Import the database configuration
 // Use body-parser middleware to parse JSON data
 app.use(bodyParser.json());
 
-// Enable CORS (Cross-Origin Resource Sharing)
-app.use(cors());
+const corsOptions = {
+  origin: '*', // Allow all origins (not recommended for production)
+  methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+  credentials: true, // Allow cookies and authentication headers
+  optionsSuccessStatus: 204,
+};
+
+app.use(cors(corsOptions));
 
 
 // Define the route for posts
