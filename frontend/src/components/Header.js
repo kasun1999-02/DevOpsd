@@ -11,7 +11,7 @@ function Header() {
   return (
     <div>
              {/* Header Section */}
-      <header className="sticky top-0 bg-gray-800 w-full h-20 flex justify-between items-center shadow-md z-50">
+      <header className="sticky top-0 bg-green-800 w-full h-20 flex justify-between items-center shadow-md z-50">
         <div className="container mx-auto flex justify-between items-center px-4 md:px-10">
           {/* Navigation Links */}
           <div className="flex space-x-6">
